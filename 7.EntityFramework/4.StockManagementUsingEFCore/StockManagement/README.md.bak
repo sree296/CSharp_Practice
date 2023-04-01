@@ -1,0 +1,6 @@
+Purpose:
+This Repo is to Illustrate
+	1. CRUD Operations for Purchase.
+	2. CRUD Operations for Sales.
+	3. Maintain the User For 30 Sec atleast.
+	4. Redirect to Home Page, if the user is trying to Enter Welcome Page without Login.

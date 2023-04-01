@@ -1,0 +1,66 @@
+﻿@model DataAccess.ViewModel.StockDetails
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="well" style="margin: 25px 0">
+        <h3>Prodct Stock</h3>
+        <table class="table">
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Stock Qty</th>
+            </tr>
+            @foreach (var product in Model.ProductList)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.StockQty</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="well" style="margin: 25px 0">
+        <h4>Purchase List</h4>
+        <table class="table">
+            <tr>
+                <th>Purchase Id</th>
+                <th>Product Id</th>
+                <th>Purchase Date</th>
+                <th>Purchase Qty</th>
+            </tr>
+            @foreach (var purchase in Model.PurchaseList)
+            {
+                <tr>
+                    <td>@purchase.PurchaseId</td>
+                    <td>@purchase.ProductId</td>
+                    <td>@purchase.PurchaseDate</td>
+                    <td>@purchase.PurchaseQty</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="well">
+        <h4>Sales List</h4>
+        <table class="table">
+            <tr>
+                <th>Sales ID</th>
+                <th>Product ID</th>
+                <th>Sale Date</th>
+                <th>Sale Qty</th>
+            </tr>
+            @foreach (var sales in Model.SaleList)
+            {
+                <tr>
+                    <td>@sales.SalesID</td>
+                    <td>@sales.ProductId</td>
+                    <td>@sales.SalesDate</td>
+                    <td>@sales.SalesQty</td>
+                </tr>
+            }
+        </table>
+    </div>

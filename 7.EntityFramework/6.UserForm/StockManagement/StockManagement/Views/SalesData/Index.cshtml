@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DataAccess.Models.SaleDetails>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   
+    <div class="well">
+        <h4>Sales List</h4>
+        <hr />
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SalesID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SalesDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SalesQty)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SalesID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SalesDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SalesQty)
+                    </td>
+                    <td>
+                                @Html.ActionLink("Edit", "Edit", new {  id=item.SalesID  }) |
+                                @Html.ActionLink("Details", "Details", new {  id=item.SalesID  }) |
+                                @Html.ActionLink("Delete", "Delete", new {  id=item.SalesID  })
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+
+    </div>
+    

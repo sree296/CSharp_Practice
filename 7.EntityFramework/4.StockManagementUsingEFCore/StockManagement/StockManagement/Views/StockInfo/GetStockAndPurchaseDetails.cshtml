@@ -1,0 +1,122 @@
+﻿@model DataAccess.ViewModel.StockDetails
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stock Management | Entity Framework</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        html, body, option {
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        input, select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        td, th {
+            padding: 5px 15px;
+        }
+        ul.navbar-nav {
+            margin-top: 25px;
+            padding-left: 0;
+        }
+        ul.navbar-nav li{
+            padding-right: 25px;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                Stock
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseData" asp-action="Index">Purchase List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="SalesData" asp-action="Index">Sales List</a>
+            </li>
+        </ul>
+    </div>
+    <div class="well" style="margin: 25px 0">
+        <h3>Prodct Stock</h3>
+        <table class="table">
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Stock Qty</th>
+            </tr>
+            @foreach (var product in Model.ProductList)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.StockQty</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="well" style="margin: 25px 0">
+        <h4>Purchase List</h4>
+        <table class="table">
+            <tr>
+                <th>Purchase Id</th>
+                <th>Product Id</th>
+                <th>Purchase Date</th>
+                <th>Purchase Qty</th>
+            </tr>
+            @foreach (var purchase in Model.PurchaseList)
+            {
+                <tr>
+                    <td>@purchase.PurchaseId</td>
+                    <td>@purchase.ProductId</td>
+                    <td>@purchase.PurchaseDate</td>
+                    <td>@purchase.PurchaseQty</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="well">
+        <h4>Sales List</h4>
+        <table class="table">
+            <tr>
+                <th>Sales ID</th>
+                <th>Product ID</th>
+                <th>Sale Date</th>
+                <th>Sale Qty</th>
+            </tr>
+            @foreach (var sales in Model.SaleList)
+            {
+                <tr>
+                    <td>@sales.SalesID</td>
+                    <td>@sales.ProductId</td>
+                    <td>@sales.SalesDate</td>
+                    <td>@sales.SalesQty</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿@model CARepository.RepoModels.CreateCaseStudyViewModel
+
+@{
+    ViewData["Title"] = "CreateCaseStudy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create CaseStudy</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="CreateCaseStudy">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="AssmtID" class="control-label"></label>
+                <select asp-for="AssmtID" class="form-control" asp-items="@(new SelectList(Model.Assessments,"AssmtID","AssmtName"))"></select>
+                <span asp-validation-for="AssmtID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CaseStudyName" class="control-label"></label>
+                <input asp-for="CaseStudyName" class="form-control" />
+                <span asp-validation-for="CaseStudyName" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SolutionOne" class="control-label"></label>
+                        <input asp-for="SolutionOne" class="form-control" />
+                        <span asp-validation-for="SolutionOne" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SolutionOneId" class="control-label"></label>
+                        <select asp-for="SolutionOneId" class="form-control" asp-items="@(new SelectList(Model.Competencies,"CompId","CompetencyName"))"></select>
+                        <span asp-validation-for="SolutionOneId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SolutionTwo" class="control-label"></label>
+                        <input asp-for="SolutionTwo" class="form-control" />
+                        <span asp-validation-for="SolutionTwo" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SolutionTwoId" class="control-label"></label>
+                        <select asp-for="SolutionTwoId" class="form-control" asp-items="@(new SelectList(Model.Competencies,"CompId","CompetencyName"))"></select>
+                        <span asp-validation-for="SolutionTwoId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SolutionThree" class="control-label"></label>
+                        <input asp-for="SolutionThree" class="form-control" />
+                        <span asp-validation-for="SolutionThree" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SolutionThreeId" class="control-label"></label>
+                        <select asp-for="SolutionThreeId" class="form-control" asp-items="@(new SelectList(Model.Competencies,"CompId","CompetencyName"))"></select>
+                        <span asp-validation-for="SolutionThreeId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SolutionFour" class="control-label"></label>
+                        <input asp-for="SolutionFour" class="form-control" />
+                        <span asp-validation-for="SolutionFour" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="SolutionFourId" class="control-label"></label>
+                        <select asp-for="SolutionFourId" class="form-control" asp-items="@(new SelectList(Model.Competencies,"CompId","CompetencyName"))"></select>
+                        <span asp-validation-for="SolutionFourId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create CaseStudy" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

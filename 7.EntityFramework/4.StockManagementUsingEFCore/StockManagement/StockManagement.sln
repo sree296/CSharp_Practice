@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement", "StockManagement\StockManagement.csproj", "{5B0245B0-975A-4458-B7BE-E5AE6C2E9F6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{5D45664A-72EC-4AF9-84D4-06DEA84B502B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B0245B0-975A-4458-B7BE-E5AE6C2E9F6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0245B0-975A-4458-B7BE-E5AE6C2E9F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B0245B0-975A-4458-B7BE-E5AE6C2E9F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B0245B0-975A-4458-B7BE-E5AE6C2E9F6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D45664A-72EC-4AF9-84D4-06DEA84B502B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D45664A-72EC-4AF9-84D4-06DEA84B502B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D45664A-72EC-4AF9-84D4-06DEA84B502B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D45664A-72EC-4AF9-84D4-06DEA84B502B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {202EC813-C5A7-4A7B-BE56-9331FCF8632B}
+	EndGlobalSection
+EndGlobal

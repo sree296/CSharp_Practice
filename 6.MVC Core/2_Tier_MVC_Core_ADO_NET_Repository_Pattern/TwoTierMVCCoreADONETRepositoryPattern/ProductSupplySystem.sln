@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoTierMVCCore", "TwoTierMVCCoreADONETRepositoryPattern\TwoTierMVCCore.csproj", "{19CDEF13-48D3-4185-9062-29A66136A092}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessRepository", "DataAccessRepository\DataAccessRepository.csproj", "{B989B995-DA40-4F05-9091-A8B749A5B529}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19CDEF13-48D3-4185-9062-29A66136A092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CDEF13-48D3-4185-9062-29A66136A092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CDEF13-48D3-4185-9062-29A66136A092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CDEF13-48D3-4185-9062-29A66136A092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B989B995-DA40-4F05-9091-A8B749A5B529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B989B995-DA40-4F05-9091-A8B749A5B529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B989B995-DA40-4F05-9091-A8B749A5B529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B989B995-DA40-4F05-9091-A8B749A5B529}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5387ABB0-E4A6-4CC6-9BDC-23C9FEE1CAD3}
+	EndGlobalSection
+EndGlobal

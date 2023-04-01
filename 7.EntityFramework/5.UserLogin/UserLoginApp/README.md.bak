@@ -1,0 +1,6 @@
+Purpose:
+This Repo is to illustrate
+	1. Create an User.
+	2. Login with User Id and Password.
+	3. Maintain the User For 30 Sec atleast.
+	4. Redirect to Home Page, if the user is trying to Enter Welcome Page without Login.

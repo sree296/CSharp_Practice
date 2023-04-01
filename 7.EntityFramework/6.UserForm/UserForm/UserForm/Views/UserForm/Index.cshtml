@@ -1,0 +1,60 @@
+﻿@model UserFormApp.Models.UserDetail
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>User Details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 well">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div> -->
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GId" class="control-label">
+                    <input type="radio" asp-for="GId" value="1" checked="true" />
+                    Male
+                </label>
+                <label asp-for="GId" class="control-label">
+                    <input type="radio" asp-for="GId" value="2"/>
+                    Female
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryId" class="control-label"></label>
+                <select asp-for="CountryId" class="form-control" asp-items="@(new SelectList(Model.CountriesInfo,"CountryId","CountryName"))"></select>
+                <span asp-validation-for="CountryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                @for (var i = 0; i < Model.LanguagesInfo.Count; i++)
+                {
+                        <input type="checkbox" asp-for="@Model.LanguagesInfo[i].Selected" />
+                        <label asp-for="@Model.LanguagesInfo[i].Selected">@Model.LanguagesInfo[i].LangName</label>
+                        <input type="hidden" asp-for="@Model.LanguagesInfo[i].LangId" />
+                        <input type="hidden" asp-for="@Model.LanguagesInfo[i].LangName"/>
+                }
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
