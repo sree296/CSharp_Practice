@@ -30,6 +30,7 @@ namespace CompetencyAssessment.Controllers
             if(userObj.UserId != null)
             {
                 HttpContext.Session.SetString("UserName", userObj.Name);
+                HttpContext.Session.SetString("UserId", userObj.UserId);
                 return RedirectToAction("Index", "Home");
 
             }
@@ -73,6 +74,8 @@ namespace CompetencyAssessment.Controllers
         [HttpGet]
         public IActionResult ChangePassword()
         {
+            ViewBag.userId = HttpContext.Session.GetString("UserId");
+
             return View();
         }
 
