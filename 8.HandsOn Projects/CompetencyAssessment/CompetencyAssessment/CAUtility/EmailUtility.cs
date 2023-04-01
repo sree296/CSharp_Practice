@@ -15,7 +15,8 @@ namespace CAUtility
         {
             try
             {
-                MailMessage message = new MailMessage(from, to);   // From address has to be GMAIL only             
+                
+                MailMessage message = new MailMessage("gattu.sreeni@gmail.com", to);   // From address has to be GMAIL only             
                 message.Subject = subject;
                 message.IsBodyHtml = true;
                 message.Body = msgBody;
@@ -24,13 +25,12 @@ namespace CAUtility
                 smtp.Host = "smtp.gmail.com";           // This is free SMTP given by gmail
                 smtp.Port = 587;                        // 587 is for free account
                 smtp.EnableSsl = true;
-                NetworkCredential NetworkCred = new NetworkCredential("sreeni.gattu@gmail.com", "Gsree296$");
+                NetworkCredential NetworkCred = new NetworkCredential("gattu.sreeni@gmail.com", "srlvjkbaoucqaeeq");
                 smtp.UseDefaultCredentials = false;
 
                 smtp.Credentials = NetworkCred;
 
                 smtp.Send(message);
-
             }
             catch (Exception ex)
             {
