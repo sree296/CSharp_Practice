@@ -24,14 +24,11 @@ namespace CARepository.Implementation
             try
             {
                 userObj = _context.UserInfoData.FirstOrDefault(x => x.UserId == loginViewModel.UserId && x.Password == loginViewModel.Password);
-
-                
             }
             catch (Exception ex)
             {
                 responseMsg = ex.Message;
             }
-            
 
             return userObj;
         }

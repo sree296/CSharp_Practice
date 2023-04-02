@@ -23,5 +23,11 @@ namespace BusinessEntity.BEModels
         // [Column(TypeName = "varchar(500)")]
         public string Description { get; set; }
 
+        [Required]
+        public DateTime AssmtDate { get; set; }
+        public bool isActive { get; set; }
+        public string? CreatedBy { get; set; }
+        public DateTime? CreatedDate { get; set; }
+
     }
 }
