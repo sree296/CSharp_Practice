@@ -17,5 +17,7 @@ namespace CARepository.Abstract
         List<RoleDetail> GetRoleDetails();
 
         public UserInfo ChangePassword(ChangePasswordModel changePswdModel);
+
+        public List<UserInfo> GetAllUsers();
     }
 }

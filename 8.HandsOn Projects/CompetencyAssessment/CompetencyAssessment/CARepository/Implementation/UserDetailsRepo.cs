@@ -128,5 +128,13 @@ namespace CARepository.Implementation
 
             return userObj;
         }
+
+        public List<UserInfo> GetAllUsers()
+        {
+            List<UserInfo> usersList = new List<UserInfo>();
+            usersList = _context.UserInfoData.ToList();
+            
+            return usersList;
+        }
     }
 }
