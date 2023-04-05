@@ -12,5 +12,9 @@ namespace CARepository.RepoModels
         public int AssmtId { get; set; }
         public List<AssessmentDetail>? AssessmentsList { get; set; }
         public List<UserInfo> UsersList { get; set; }
+
+        public string? CreatedBy { get; set; }
+        public DateTime? CreatedDate { get; set; }
+
     }
 }

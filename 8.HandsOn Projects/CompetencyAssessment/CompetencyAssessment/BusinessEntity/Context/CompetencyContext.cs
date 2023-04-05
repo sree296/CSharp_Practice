@@ -16,6 +16,8 @@ namespace BusinessEntity.Context
         public DbSet<CaseStudyDetail> CaseStudyDetailData { get; set; }
         public DbSet<CaseStudySolution> CaseStudySolutionData { get; set; }
         public DbSet<CompetencyDetail> CompetencyDetailData { get; set; }
+        public DbSet<AssessmentUserMapping> AssessmentUserMappingData { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

@@ -1,4 +1,5 @@
-﻿using CARepository.Abstract;
+﻿using BusinessEntity.BEModels;
+using CARepository.Abstract;
 using CARepository.Implementation;
 using CARepository.RepoModels;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +10,7 @@ namespace CompetencyAssessment.Controllers
     {
         IAssessmentDetailsRepo _assmtObj = new AssessmentDetailsRepo();
         IUserDetailsRepo _usersObj = new UserDetailsRepo();
-
+        IScheduleAssessmentRepo _schduleAssmntObj = new ScheduleAssessmentRepo();
 
         [HttpGet]
         public IActionResult Schedule()
@@ -25,6 +26,11 @@ namespace CompetencyAssessment.Controllers
         [HttpPost]
         public IActionResult Schedule(ScheduleAssessmentViewModel scheduleAssmtVM)
         {
+            string createBy = HttpContext.Session.GetString("UserName");
+
+            scheduleAssmtVM.CreatedBy = createBy;
+
+            List<AssessmentUserMapping> assmntUser = _schduleAssmntObj.CreateSchedule(scheduleAssmtVM);
             Console.WriteLine(scheduleAssmtVM);
 
             return View(scheduleAssmtVM);

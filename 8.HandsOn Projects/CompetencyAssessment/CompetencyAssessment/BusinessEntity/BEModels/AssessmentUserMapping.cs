@@ -16,7 +16,7 @@ namespace BusinessEntity.BEModels
         [Required]
         public int UserId { get; set; }
         [Required]
-        public int isActive { get; set; }
+        public Boolean isActive { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
     }
