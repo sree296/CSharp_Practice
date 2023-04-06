@@ -31,7 +31,12 @@ namespace CompetencyAssessment.Controllers
             scheduleAssmtVM.CreatedBy = createBy;
 
             List<AssessmentUserMapping> assmntUser = _schduleAssmntObj.CreateSchedule(scheduleAssmtVM);
-            Console.WriteLine(scheduleAssmtVM);
+
+            if (assmntUser != null)
+            {
+                return RedirectToAction("Index", "Home");
+
+            }
 
             return View(scheduleAssmtVM);
         }

@@ -21,6 +21,7 @@
             <table class="table table-border">
                 <tr>
                     <th>Is Active</th>
+                    <th>Id</th>
                     <th>Emp Id</th>
                     <th>Emp Name</th>
                 </tr>
@@ -32,11 +33,14 @@
                                 @Html.CheckBoxFor(modelItem => Model.UsersList[i].isActive)
                             </td>
                             <td>
-                                @Html.DisplayTextFor(modelItem => Model.UsersList[i].EmpID)
+                                @Html.TextBoxFor(modelItem => Model.UsersList[i].Id)
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(modelItem => Model.UsersList[i].EmpID)
                             </td>
                             <td>
 
-                                @Html.DisplayTextFor(modelItem => Model.UsersList[i].Name)
+                                @Html.TextBoxFor(modelItem => Model.UsersList[i].Name)
                             </td>
                         </tr>
                     }
