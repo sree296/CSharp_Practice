@@ -32,6 +32,7 @@ namespace CARepository.Implementation
                 caseObj.AssessmentID = createcaseStudyVM.AssmtID;
                 caseObj.ReviewStatus = false;
                 caseObj.CareatedBy = createcaseStudyVM.CreatedBy;
+                caseObj.IsActive = false;
                 _context.CaseStudyDetailData.Add(caseObj);
                 _context.SaveChanges();
 
@@ -73,6 +74,21 @@ namespace CARepository.Implementation
             }
 
             return caseObj;
+        }
+
+        public List<CaseStudyDetail> GetAllCaseStudies()
+        {
+            List<CaseStudyDetail> caseStudies = new List<CaseStudyDetail>();
+            try
+            {
+                caseStudies = _context.CaseStudyDetailData.ToList();
+            }
+            catch (Exception ex)
+            {
+                string str = ex.Message;
+            }
+
+            return caseStudies;
         }
 
         public List<AssessmentDetail> GetAssessmentDetail()

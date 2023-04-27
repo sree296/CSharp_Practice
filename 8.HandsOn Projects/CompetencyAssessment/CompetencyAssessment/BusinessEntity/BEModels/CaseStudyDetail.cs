@@ -26,5 +26,7 @@ namespace BusinessEntity.BEModels
 
         public string? CareatedBy { get; set; }
 
+        public bool IsActive { get; set; }
+
     }
 }

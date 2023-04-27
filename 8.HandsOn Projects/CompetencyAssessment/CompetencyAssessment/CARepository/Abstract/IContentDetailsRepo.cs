@@ -12,6 +12,7 @@ namespace CARepository.Abstract
     {
         List<AssessmentDetail> GetAssessmentDetail();
         List<CompetencyDetail> GetCompetencyDetail();
+        List<CaseStudyDetail> GetAllCaseStudies();
 
         CaseStudyDetail CreateCaseStudy(CreateCaseStudyViewModel createcaseStudy);
     }

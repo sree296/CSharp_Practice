@@ -4,6 +4,7 @@ using BusinessEntity.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BusinessEntity.Migrations
 {
     [DbContext(typeof(CompetencyContext))]
-    partial class CompetencyContextModelSnapshot : ModelSnapshot
+    [Migration("20230427163857_six_6")]
+    partial class six_6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,35 +24,6 @@ namespace BusinessEntity.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("BusinessEntity.BEModels.AssessmentContentMapping", b =>
-                {
-                    b.Property<int>("AssmtCaseStudyId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AssmtCaseStudyId"));
-
-                    b.Property<int>("AssmtId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CaseStudyId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("IsActive")
-                        .IsRequired()
-                        .HasColumnType("bit");
-
-                    b.HasKey("AssmtCaseStudyId");
-
-                    b.ToTable("AssessmentContentMappingData");
-                });
 
             modelBuilder.Entity("BusinessEntity.BEModels.AssessmentDetail", b =>
                 {

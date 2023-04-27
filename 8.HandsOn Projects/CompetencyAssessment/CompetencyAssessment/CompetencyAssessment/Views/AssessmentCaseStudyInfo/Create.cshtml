@@ -1,0 +1,59 @@
+﻿@model CARepository.RepoModels.AssesmentCaseStudyViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>AssesmentCaseStudyViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AssmtId" class="control-label"></label>
+                <select asp-for="AssmtId" class="form-control" asp-items="@(new SelectList(Model.AssessmentsList,"AssmtID","AssmtName"))"></select>
+                <span asp-validation-for="AssmtId" class="text-danger"></span>
+            </div>
+
+            <table class="table table-border">
+                <tr>
+                    <th>Is Active</th>
+                    <th>Case Study Id</th>
+                    <th>Case Study Name</th>
+                </tr>
+                <tbody>
+                    @for (int i = 0; i < Model.CaseStudyList.Count(); i++)
+                    {
+                        <tr>
+                            <td>
+                                @Html.CheckBoxFor(modelItem => Model.CaseStudyList[i].IsActive)
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(modelItem => Model.CaseStudyList[i].CSID)
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(modelItem => Model.CaseStudyList[i].CaseStudyName)
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
